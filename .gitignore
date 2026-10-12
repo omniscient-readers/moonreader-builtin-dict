@@ -1,0 +1,45 @@
+# Build outputs, downloaded tools and generated data - none of it belongs in git.
+# Patterns for directories we own are anchored with a leading slash on purpose:
+# an unanchored "tools/" also matches java/stubs/com/flyersoft/tools/ and would
+# silently drop a source file.
+
+# --- generated / local only ---
+/build/
+/tools/
+/data/
+/assets/*.txt
+/.keys/
+*.keystore
+*.jks
+*.pass
+*.idsig
+
+# --- reference material that must never be committed ---
+# stock apk, decompiled trees, rebuilt apks, signing material, logs
+*.apk
+*.apks
+*.smali
+apktool.yml
+*.log
+# decompiled / compiled intermediate trees, wherever they are unpacked
+**/smali/
+**/smali_classes*/
+**/original/
+manifest_orig.txt
+manifest_mod.txt
+
+# --- python ---
+__pycache__/
+*.py[cod]
+/.venv/
+/venv/
+
+# --- editors / os ---
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store
+# editor-side search excludes; local preference, not part of the project
+.zcodeignore

@@ -1,0 +1,15 @@
+# Keep line endings consistent regardless of who clones this on which OS.
+* text=auto eol=lf
+
+# Patch scripts read and write the decompiled tree byte for byte, and the
+# toolchain is happiest with plain LF sources - never let git "help" here.
+*.py   text eol=lf
+*.ps1  text eol=lf
+*.java text eol=lf
+*.md   text eol=lf
+
+# Anything that should never be normalised
+*.jar  binary
+*.apk  binary
+*.dex  binary
+*.keystore binary
